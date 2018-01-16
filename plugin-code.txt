@@ -12,7 +12,7 @@ Sub HTMLMessage()
   If myValue <> "" Then
     ' If a value is input for SMB tags
     Set objOutlookMsg = Outlook.Application.CreateItem(olMailItem)
-    objOutlookMsg.HTMLBody = "<b>smb Image Tag below </b><br>" && myValue
+    objOutlookMsg.HTMLBody = "<b>smb Image Tag below </b><br>" & myValue
     objOutlookMsg.Display
   End If
 End Sub
