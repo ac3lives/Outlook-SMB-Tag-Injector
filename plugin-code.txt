@@ -1,0 +1,18 @@
+Sub HTMLMessage()
+  Dim objOutlookMsg As Outlook.MailItem
+  Dim message, title, defaultValue As String
+  Dim myValue As String
+  ' prompt for user input.
+  message = "Enter SMB Tag(s)"
+  ' Set popup box title.
+  title = "SMB Input Box"
+  defaultValue = "<img src='file://IPADDRESS/image/signature.jpg'><img src='file:\\IPADDRESS\image\signature.jpg'>"
+  ' Prompt input box
+  myValue = InputBox(message, title, defaultValue)
+  If myValue <> "" Then
+    ' If a value is input for SMB tags
+    Set objOutlookMsg = Outlook.Application.CreateItem(olMailItem)
+    objOutlookMsg.HTMLBody = "<b>smb Image Tag below </b><br>" && myValue
+    objOutlookMsg.Display
+  End If
+End Sub
